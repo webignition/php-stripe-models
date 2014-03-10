@@ -13,7 +13,7 @@ abstract class Object {
     public function __construct($json) {
         $this->data = json_decode($json);
         
-        if (property_exists($this->data, 'metadata')) {
+        if (!is_null($this->data) && property_exists($this->data, 'metadata')) {
             $this->setDataProperty('metadata', new \stdClass());
         }
     }

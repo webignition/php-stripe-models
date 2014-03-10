@@ -19,8 +19,10 @@ class ObjectList extends Object {
         
         $this->items = new ArrayCollection();
         
-        foreach ($this->getDataProperty('data') as $item) {
-            $this->items->add(Factory::create(json_encode($item)));
+        if ($this->hasDataProperty('data')) {
+            foreach ($this->getDataProperty('data') as $item) {
+                $this->items->add(Factory::create(json_encode($item)));
+            }            
         }
     }
     

@@ -9,7 +9,7 @@ abstract class ObjectTest extends BaseTest {
     
     /**
      *
-     * @var \webignition\Model\Stripe\Object
+     * @var \webignition\Model\Stripe\Object\Object
      */
     protected $object;    
     
