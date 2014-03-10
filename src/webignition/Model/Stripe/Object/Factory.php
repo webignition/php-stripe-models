@@ -19,6 +19,24 @@ class Factory {
         'event' => 'webignition\Model\Stripe\Event\Event',
     );
     
+    
+    /**
+     * 
+     * @param string $type
+     * @return boolean
+     */
+    public static function isKnownEntityType($type) {
+        return array_key_exists($type, self::$objectNameToModelClassMap);
+    }
+    
+    
+    /**
+     * 
+     * @param string $json
+     * @return \webignition\Model\Stripe\Object\Object
+     * @throws \InvalidArgumentException
+     * @throws \OutOfRangeException
+     */
     public static function create($json) {        
         $entity = json_decode($json);
         

@@ -10,6 +10,18 @@ class Data extends Object {
     public function __construct($json) {        
         parent::__construct($json);        
         $this->setDataProperty('object', Factory::create(json_encode($this->getDataProperty('object'))));
+        
+        if ($this->hasPreviousAttributes()) {
+            $previousAttributes = $this->getPreviousAttributes();
+            
+            foreach ($previousAttributes as $key => $value) {
+                if ($value instanceof \stdClass && isset($value->object) && Factory::isKnownEntityType($value->object)) {
+                    $previousAttributes->{$key} = Factory::create(json_encode($value));
+                }
+            }
+            
+            $this->setDataProperty('previous_attributes', $previousAttributes);
+        }
     }
     
     

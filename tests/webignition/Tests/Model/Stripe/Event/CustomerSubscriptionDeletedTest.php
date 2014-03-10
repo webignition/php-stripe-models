@@ -2,9 +2,7 @@
 
 namespace webignition\Tests\Model\Stripe\Event;
 
-use webignition\Tests\Model\Stripe\ObjectTest;
-
-class CustomerSubscriptionDeletedTest extends ObjectTest { 
+class CustomerSubscriptionDeletedTest extends EventTest { 
 
     public function testGetId() {
         $this->assertEquals('evt_3ZEZ8gI7aPSU7O', $this->getEvent()->getId());
@@ -79,15 +77,6 @@ class CustomerSubscriptionDeletedTest extends ObjectTest {
             'pending_webhooks' => 1,
             'request' => 'iar_3ZEZdedNZchQEr',
         ), $this->getEvent()->__toArray());
-    }    
-    
-    
-    /**
-     * 
-     * @return \webignition\Model\Stripe\Event\Event
-     */
-    private function getEvent() {
-        return $this->object;
     }
     
 }
