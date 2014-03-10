@@ -74,6 +74,10 @@ class SubscriptionTest extends ObjectTest {
         $this->assertNull($this->getSubscription()->getDiscount());
     }
     
+    public function testWasCancelledDuringTrial() {
+        $this->assertFalse($this->getSubscription()->wasCancelledDuringTrial());
+    }       
+    
     
     public function testToArray() {
         $this->assertEquals(array(          

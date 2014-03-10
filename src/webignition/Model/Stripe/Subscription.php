@@ -143,6 +143,15 @@ class Subscription extends Object {
     
     /**
      * 
+     * @return boolean
+     */
+    public function hasTrialPeriod() {
+        return !is_null($this->getTrialPeriod());
+    }
+    
+    
+    /**
+     * 
      * @return int|null
      */
     public function getCancelledAt() {
@@ -187,7 +196,11 @@ class Subscription extends Object {
             return false;
         }
         
-        return $this->getCancelledAt() <= $this->getTrialEnd();
+        if (!$this->hasTrialPeriod()) {
+            return false;
+        }
+        
+        return $this->getCancelledAt() <= $this->getTrialPeriod()->getEnd();
     }
     
     
