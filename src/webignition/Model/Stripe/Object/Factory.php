@@ -16,6 +16,7 @@ class Factory {
         ),
         'invoice' => 'webignition\Model\Stripe\Invoice\Invoice',
         'period' => 'webignition\Model\Stripe\Period',
+        'event' => 'webignition\Model\Stripe\Event\Event',
     );
     
     public static function create($json) {        

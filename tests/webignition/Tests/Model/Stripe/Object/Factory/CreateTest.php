@@ -96,5 +96,10 @@ class CreateTest extends BaseTest {
     
     public function testPeriodAsStartEnd() {        
         $this->assertInstanceOf('webignition\Model\Stripe\Period', Factory::create($this->getFixture('Period/as-start-end.json')));
-    }      
+    }
+    
+    public function testEvent() {
+        $this->assertInstanceOf('webignition\Model\Stripe\Event\Event', Factory::create($this->getFixture('Event/customer.subscription.deleted.json')));
+    }
+    
 }
