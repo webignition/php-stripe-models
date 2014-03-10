@@ -2,6 +2,7 @@
 
 namespace webignition\Model\Stripe\Event;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use webignition\Model\Stripe\Object\Factory;
 use webignition\Model\Stripe\Object\Object;
 
@@ -12,15 +13,17 @@ class Data extends Object {
         $this->setDataProperty('object', Factory::create(json_encode($this->getDataProperty('object'))));
         
         if ($this->hasPreviousAttributes()) {
-            $previousAttributes = $this->getPreviousAttributes();
+            $previousAttributesCollection = new ArrayCollection();
             
-            foreach ($previousAttributes as $key => $value) {
+            foreach ($this->getPreviousAttributes() as $key => $value) {
                 if ($value instanceof \stdClass && isset($value->object) && Factory::isKnownEntityType($value->object)) {
-                    $previousAttributes->{$key} = Factory::create(json_encode($value));
+                    $value = Factory::create(json_encode($value));
                 }
+                
+                $previousAttributesCollection->set($key, $value);
             }
             
-            $this->setDataProperty('previous_attributes', $previousAttributes);
+            $this->setDataProperty('previous_attributes', $previousAttributesCollection);
         }
     }
     
@@ -36,7 +39,7 @@ class Data extends Object {
     
     /**
      * 
-     * @return \stdClass|null
+     * @return \Doctrine\Common\Collections\ArrayCollection|null
      */
     public function getPreviousAttributes() {
         return $this->getDataProperty('previous_attributes');
