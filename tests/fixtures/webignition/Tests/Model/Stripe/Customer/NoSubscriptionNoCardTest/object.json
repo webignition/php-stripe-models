@@ -1,0 +1,31 @@
+{
+  "object": "customer",
+  "created": 1394192199,
+  "id": "cus_3cbU7OeaCpcS9D",
+  "livemode": false,
+  "description": null,
+  "email": "user@example.com",
+  "delinquent": false,
+  "metadata": {
+  },
+  "subscriptions": {
+    "object": "list",
+    "count": 0,
+    "url": "/v1/customers/cus_3cbU7OeaCpcS9D/subscriptions",
+    "data": [
+
+    ]
+  },
+  "discount": null,
+  "account_balance": 0,
+  "currency": "gbp",
+  "cards": {
+    "object": "list",
+    "count": 0,
+    "url": "/v1/customers/cus_3cbU7OeaCpcS9D/cards",
+    "data": [
+
+    ]
+  },
+  "default_card": null
+}

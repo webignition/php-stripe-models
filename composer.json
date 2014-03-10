@@ -1,0 +1,29 @@
+{
+    "name": "webignition/php-stripe-models",
+    "description": "Models for various Stripe entities",
+    "keywords": ["Stripe", "model"],
+    "homepage": "https://github.com/webignition/php-stripe-models",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jon Cram",
+            "email": "jon@webignition.net"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "webignition\\Tests": "tests/",
+            "": "src/"
+        }
+    },   
+    "require": {
+        "php": ">=5.3.0",
+        "doctrine/collections":"*"
+    },
+    "require-dev": {
+        "symfony/class-loader": "*",
+        "phpunit/phpunit": "3.7.*"
+    },            
+    "minimum-stability":"stable"
+}

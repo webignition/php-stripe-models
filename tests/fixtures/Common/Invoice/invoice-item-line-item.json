@@ -1,0 +1,18 @@
+{
+  "id": "ii_3ceeSvsBe2qaNA",
+  "object": "line_item",
+  "type": "invoiceitem",
+  "livemode": false,
+  "amount": 1000,
+  "currency": "gbp",
+  "proration": false,
+  "period": {
+    "start": 1394203949,
+    "end": 1394203949
+  },
+  "quantity": null,
+  "plan": null,
+  "description": "Foo",
+  "metadata": {
+  }
+}
