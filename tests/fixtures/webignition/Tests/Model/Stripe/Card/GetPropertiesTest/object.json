@@ -10,7 +10,7 @@
   "country": "US",
   "name": "Mr Foo Bar",
   "address_line1": "Address Line 1",
-  "address_line2": null,
+  "address_line2": "Address Line 2",
   "address_city": "Address City",
   "address_state": "Address State",
   "address_zip": "Address Zip",
