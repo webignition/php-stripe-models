@@ -18,6 +18,10 @@ class WithSubscriptionWithCardTest extends ObjectTest {
         $this->assertInstanceOf('webignition\Model\Stripe\Card', $this->getCustomer()->getActiveCard());
     }
     
+    public function testHasActiveCard() {
+        $this->assertTrue($this->getCustomer()->hasActiveCard());
+    }    
+    
     public function testHasSubscription() {
         $this->assertTrue($this->getCustomer()->hasSubscription());
     }    

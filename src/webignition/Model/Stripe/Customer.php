@@ -92,6 +92,15 @@ class Customer extends Object {
     
     /**
      * 
+     * @return boolean
+     */
+    public function hasActiveCard() {
+        return !is_null($this->getActiveCard());
+    }
+    
+    
+    /**
+     * 
      * @return \webignition\Model\Stripe\ObjectList
      */
     public function getCards() {

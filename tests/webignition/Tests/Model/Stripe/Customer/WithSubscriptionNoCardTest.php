@@ -18,6 +18,10 @@ class WithSubscriptionNoCardTest extends ObjectTest {
         $this->assertNull($this->getCustomer()->getActiveCard());
     }
     
+    public function testHasActiveCard() {
+        $this->assertFalse($this->getCustomer()->hasActiveCard());
+    }    
+    
     public function testHasSubscription() {
         $this->assertTrue($this->getCustomer()->hasSubscription());
     }    
