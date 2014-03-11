@@ -49,11 +49,12 @@ class ObjectList extends Object {
      * @return array
      */
     public function __toArray() {
-        //$returnArray = (array)$this->getData();
         $returnArray = parent::__toArray();
         
-        foreach ($returnArray['data'] as $index => $item) {
-            $returnArray['data'][$index] = Factory::create(json_encode($item))->__toArray();
+        if (isset($returnArray['data'])) {
+            foreach ($returnArray['data'] as $index => $item) {
+                $returnArray['data'][$index] = Factory::create(json_encode($item))->__toArray();
+            }            
         }
         
         return $returnArray;
