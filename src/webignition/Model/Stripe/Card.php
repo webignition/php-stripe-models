@@ -152,7 +152,7 @@ class Card extends Object {
      * @return boolean
      */
     public function isPassedAddressLine1Check() {
-        return !in_array('cvc', $this->getCheckFailures());
+        return !in_array('address_line1', $this->getCheckFailures());
     }
     
     /**
@@ -160,7 +160,7 @@ class Card extends Object {
      * @return boolean
      */
     public function isPassedAddressZipCheck() {
-        return !in_array('cvc', $this->getCheckFailures());
+        return !in_array('address_zip', $this->getCheckFailures());
     }    
     
     

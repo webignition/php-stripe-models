@@ -1,0 +1,21 @@
+{
+  "id": "card_3ZEbOIFfsVo22H",
+  "object": "card",
+  "last4": "4242",
+  "type": "Visa",
+  "exp_month": 1,
+  "exp_year": 2024,
+  "fingerprint": "7y5WDQllCuyzj32D",
+  "customer": "cus_3cbU7OeaCpcS9D",
+  "country": "US",
+  "name": "Mr Foo Bar",
+  "address_line1": "Address Line 1",
+  "address_line2": null,
+  "address_city": "Address City",
+  "address_state": "Address State",
+  "address_zip": "Address Zip",
+  "address_country": "GB",
+  "cvc_check": "pass",
+  "address_line1_check": "pass",
+  "address_zip_check": "fail"
+}
