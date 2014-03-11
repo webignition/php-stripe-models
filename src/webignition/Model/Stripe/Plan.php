@@ -32,4 +32,13 @@ class Plan extends Object {
         return $this->getDataProperty('amount');
     }
     
+    
+    /**
+     * 
+     * @return string
+     */
+    public function getInterval() {
+        return $this->getDataProperty('interval');
+    }
+    
 }

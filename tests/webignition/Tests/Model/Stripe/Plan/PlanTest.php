@@ -18,6 +18,10 @@ class PlanTest extends ObjectTest {
         $this->assertEquals('900', $this->getPlan()->getAmount());
     }
     
+    public function testGetInterval() {
+        $this->assertEquals('month', $this->getPlan()->getInterval());
+    }
+    
     public function testToArray() {
         $this->assertEquals(array(
             'interval' => 'month',
