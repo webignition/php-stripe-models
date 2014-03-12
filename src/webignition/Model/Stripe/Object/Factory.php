@@ -2,6 +2,8 @@
 
 namespace webignition\Model\Stripe\Object;
 
+use webignition\Model\Stripe\Event\Factory as EventFactory;
+
 class Factory {
     
     private static $objectNameToModelClassMap = array(
@@ -15,8 +17,7 @@ class Factory {
             'invoiceitem' => 'webignition\Model\Stripe\Invoice\LineItem\InvoiceItem'
         ),
         'invoice' => 'webignition\Model\Stripe\Invoice\Invoice',
-        'period' => 'webignition\Model\Stripe\Period',
-        'event' => 'webignition\Model\Stripe\Event\Event',
+        'period' => 'webignition\Model\Stripe\Period'
     );
     
     
@@ -48,6 +49,10 @@ class Factory {
             $type = $entity->object;           
         } elseif (self::isPeriodEntity($entity)) {
             $type = 'period';
+        }
+        
+        if ($type == 'event') {
+            return EventFactory::create($json);
         }
 
         $modelClass = self::getModelClassFromObjectName($type);

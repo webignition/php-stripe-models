@@ -3,21 +3,21 @@
 namespace webignition\Model\Stripe\Event;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use webignition\Model\Stripe\Object\Factory;
+use webignition\Model\Stripe\Object\Factory as ObjectFactory;
 use webignition\Model\Stripe\Object\Object;
 
 class Data extends Object {
     
     public function __construct($json) {        
         parent::__construct($json);        
-        $this->setDataProperty('object', Factory::create(json_encode($this->getDataProperty('object'))));
+        $this->setDataProperty('object', ObjectFactory::create(json_encode($this->getDataProperty('object'))));
         
         if ($this->hasPreviousAttributes()) {
             $previousAttributesCollection = new ArrayCollection();
             
             foreach ($this->getPreviousAttributes() as $key => $value) {
-                if ($value instanceof \stdClass && isset($value->object) && Factory::isKnownEntityType($value->object)) {
-                    $value = Factory::create(json_encode($value));
+                if ($value instanceof \stdClass && isset($value->object) && ObjectFactory::isKnownEntityType($value->object)) {
+                    $value = ObjectFactory::create(json_encode($value));
                 }
                 
                 $previousAttributesCollection->set($key, $value);
