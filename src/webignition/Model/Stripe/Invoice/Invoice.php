@@ -245,7 +245,17 @@ class Invoice extends Object {
      * @return boolean
      */
     public function isForSubscription(\webignition\Model\Stripe\Subscription $subscription) {
-        return $this->getSubscriptionId() == $subscription->getId();
+        if ($this->hasDataProperty('subscription')) {
+            return $this->getSubscriptionId() == $subscription->getId();
+        }
+        
+        foreach ($this->getSubscriptionLines() as $subscriptionLine) {
+            if ($subscriptionLine->getId() == $subscription->getId()) {
+                return true;
+            }
+        }
+        
+        return false;
     }
     
 }
