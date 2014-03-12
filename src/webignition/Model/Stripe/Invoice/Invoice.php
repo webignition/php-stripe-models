@@ -2,8 +2,6 @@
 
 namespace webignition\Model\Stripe\Invoice;
 
-use webignition\Model\Stripe\Invoice\LineItem\InvoiceItem;
-use webignition\Model\Stripe\Invoice\LineItem\Subscription;
 use webignition\Model\Stripe\ObjectList;
 use webignition\Model\Stripe\Period;
 use webignition\Model\Stripe\Object\Object;
@@ -225,11 +223,11 @@ class Invoice extends Object {
     
     /**
      * 
-     * @param string $subscriptionId
+     * @param \webignition\Model\Stripe\Subscription $subscriptionId
      * @return boolean
      */
-    public function isForSubscription($subscriptionId) {
-        return $this->getSubscriptionId() == $subscriptionId;
+    public function isForSubscription(\webignition\Model\Stripe\Subscription $subscription) {
+        return $this->getSubscriptionId() == $subscription->getId();
     }
     
 }

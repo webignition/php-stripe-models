@@ -102,6 +102,12 @@ class WithSingleSubscriptionLineItemTest extends ObjectTest {
         $this->assertEquals('', $this->getInvoice()->getDescription());
     }
     
+    public function testIsForSubscription() {
+        $this->assertTrue($this->getInvoice()->isForSubscription(new \webignition\Model\Stripe\Subscription(json_encode(array(
+            'id' => 'sub_3ceX8jHwVquCNo'
+        )))));
+    }
+    
     public function testToArray() {
         $this->assertEquals(array(           
             'date' => 1394203572,
