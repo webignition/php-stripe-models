@@ -28,7 +28,15 @@ class WithSingleSubscriptionLineItemTest extends ObjectTest {
         $this->assertInstanceOf('webignition\Model\Stripe\ObjectList', $lines);  
         $this->assertEquals(1, $lines->getItems()->count());
         $this->assertInstanceOf('webignition\Model\Stripe\Invoice\LineItem\Subscription', $lines->getItems()->first());
-    }    
+    }
+    
+    public function testGetSubscriptionLines() {
+        $lines = $this->getInvoice()->getSubscriptionLines();
+        
+        $this->assertEquals(1, count($lines));
+        $this->assertInstanceOf('webignition\Model\Stripe\Invoice\LineItem\Subscription', $lines[0]);
+    }
+    
     
     public function testGetTotal() {
         $this->assertEquals(0, $this->getInvoice()->getTotal());

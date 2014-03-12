@@ -214,6 +214,24 @@ class Invoice extends Object {
     
     /**
      * 
+     * @return \webignition\Model\Stripe\Invoice\LineItem\Subscription[]
+     */
+    public function getSubscriptionLines() {
+        $lines = array();
+        
+        foreach ($this->getLines()->getItems() as $item) {
+            /* @var $line \webignition\Model\Stripe\Invoice\LineItem\LineItem */
+            if ($item->getType() == 'subscription') {
+                $lines[] = $item;
+            }            
+        }
+        
+        return $lines;
+    }
+    
+    
+    /**
+     * 
      * @return string
      */
     public function getSubscriptionId() {
