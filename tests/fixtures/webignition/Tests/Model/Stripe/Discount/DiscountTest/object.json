@@ -1,0 +1,23 @@
+{
+    "coupon": {
+        "id": "TMS",
+        "created": 1407422003,
+        "percent_off": 20,
+        "amount_off": null,
+        "currency": null,
+        "object": "coupon",
+        "livemode": false,
+        "duration": "forever",
+        "redeem_by": null,
+        "max_redemptions": null,
+        "times_redeemed": 7,
+        "duration_in_months": null,
+        "valid": true,
+        "metadata": {}
+    },
+    "start": 1407852586,
+    "object": "discount",
+    "customer": "cus_4ZpdOIgXTGsiax",
+    "subscription": null,
+    "end": null
+}

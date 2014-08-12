@@ -106,4 +106,8 @@ class CreateTest extends BaseTest {
         $this->assertInstanceOf('webignition\Model\Stripe\Coupon', Factory::create($this->getFixture('Coupon/coupon.json')));
     }
 
+    public function testDiscount() {
+        $this->assertInstanceOf('webignition\Model\Stripe\Discount', Factory::create($this->getFixture('Discount/discount.json')));
+    }
+
 }
