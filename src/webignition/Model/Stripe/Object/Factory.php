@@ -17,7 +17,8 @@ class Factory {
             'invoiceitem' => 'webignition\Model\Stripe\Invoice\LineItem\InvoiceItem'
         ),
         'invoice' => 'webignition\Model\Stripe\Invoice\Invoice',
-        'period' => 'webignition\Model\Stripe\Period'
+        'period' => 'webignition\Model\Stripe\Period',
+        'coupon' => 'webignition\Model\Stripe\Coupon'
     );
     
     
