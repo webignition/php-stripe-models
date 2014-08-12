@@ -25,6 +25,10 @@ class Customer extends Object {
         if ($this->hasDataProperty('subscription')) {
             $this->setDataProperty('subscription', new Subscription(json_encode($this->getDataProperty('subscription'))));
         }
+
+        if ($this->hasDataProperty('discount')) {
+            $this->setDataProperty('discount', new Discount(json_encode($this->getDataProperty('discount'))));
+        }
         
         $this->subscriptions = new ObjectList(json_encode($this->getDataProperty('subscriptions')));
         
@@ -119,6 +123,22 @@ class Customer extends Object {
         $returnArray['cards'] = $this->getCards()->__toArray();        
         
         return $returnArray;
+    }
+
+
+    /**
+     * @return mixed
+     */
+    public function getDiscount() {
+        return $this->getDataProperty('discount');
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function hasDiscount() {
+        return !is_null($this->getDiscount());
     }
     
 }
