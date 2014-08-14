@@ -69,7 +69,7 @@ class Invoice extends Object {
      * @return int
      */
     public function getSubtotal() {
-        return $this->getDataProperty('sub_total');
+        return $this->getDataProperty('subtotal');
     } 
     
     

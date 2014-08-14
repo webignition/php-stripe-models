@@ -39,11 +39,11 @@ class WithSingleSubscriptionLineItemTest extends ObjectTest {
     
     
     public function testGetTotal() {
-        $this->assertEquals(0, $this->getInvoice()->getTotal());
+        $this->assertEquals(10, $this->getInvoice()->getTotal());
     }    
     
     public function testGetSubtotal() {
-        $this->assertEquals(0, $this->getInvoice()->getSubtotal());
+        $this->assertEquals(9, $this->getInvoice()->getSubtotal());
     }   
     
     public function testGetCustomerId() {
@@ -158,8 +158,8 @@ class WithSingleSubscriptionLineItemTest extends ObjectTest {
                     )
                 )    
             ),
-            'subtotal' => 0,
-            'total' => 0,
+            'subtotal' => 9,
+            'total' => 10,
             'customer' => 'cus_3cbU7OeaCpcS9D',
             'object' => 'invoice',
             'attempted' => true,

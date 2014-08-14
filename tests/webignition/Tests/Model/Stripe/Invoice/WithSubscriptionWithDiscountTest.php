@@ -13,7 +13,15 @@ class WithSubscriptionWithDiscountTest extends ObjectTest {
     public function testGetDiscount() {
         $this->assertInstanceOf('webignition\Model\Stripe\Discount', $this->getInvoice()->getDiscount());
     }
-    
+
+    public function testGetSubtotal() {
+        $this->assertEquals(900, $this->getInvoice()->getSubtotal());
+    }
+
+    public function testGetTotal() {
+        $this->assertEquals(720, $this->getInvoice()->getTotal());
+    }
+
     /**
      * 
      * @return \webignition\Model\Stripe\Invoice\Invoice
