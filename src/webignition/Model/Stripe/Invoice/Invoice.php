@@ -5,6 +5,7 @@ namespace webignition\Model\Stripe\Invoice;
 use webignition\Model\Stripe\ObjectList;
 use webignition\Model\Stripe\Period;
 use webignition\Model\Stripe\Object\Object;
+use webignition\Model\Stripe\Discount;
 
 class Invoice extends Object {
     
@@ -19,6 +20,10 @@ class Invoice extends Object {
         
         if ($this->hasDataProperty('lines')) {           
             $this->setDataProperty('lines', new ObjectList(json_encode($this->getDataProperty('lines'))));
+        }
+
+        if ($this->hasDataProperty('discount')) {
+            $this->setDataProperty('discount', new Discount(json_encode($this->getDataProperty('discount'))));
         }
         
         $this->period = new Period($json);
@@ -149,11 +154,10 @@ class Invoice extends Object {
     
     /**
      * 
-     * @return null
+     * @return Discount|null
      */
     public function getDiscount() {
-        // Not yet implemented
-        return null;
+        return $this->getDataProperty('discount');
     } 
     
     
