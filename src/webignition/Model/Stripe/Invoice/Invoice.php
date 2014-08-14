@@ -158,7 +158,15 @@ class Invoice extends Object {
      */
     public function getDiscount() {
         return $this->getDataProperty('discount');
-    } 
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function hasDiscount() {
+        return $this->getDiscount() instanceof Discount;
+    }
     
     
     /**
