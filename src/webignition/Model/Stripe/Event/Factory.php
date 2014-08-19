@@ -8,6 +8,8 @@ class Factory {
     
     private static $eventTypeToModelClassMap = array(
         'customer.subscription.updated' => 'webignition\Model\Stripe\Event\CustomerSubscriptionUpdated',
+        'customer.created' => 'webignition\Model\Stripe\Event\Customer\Created',
+        'customer.updated' => 'webignition\Model\Stripe\Event\Customer\Updated',
     );
     
     

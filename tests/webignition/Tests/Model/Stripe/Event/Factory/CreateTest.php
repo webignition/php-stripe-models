@@ -21,6 +21,18 @@ class CreateTest extends BaseTest {
         $this->assertTrue($event->isStatusChange());
         $this->assertEquals('trialing:active', $event->getStatusChange());
         $this->assertTrue($event->hasStatusChange('trialing:active'));
-    }    
+    }
+
+
+    public function testCustomerCreated() {
+        $event = Factory::create($this->getFixture('customer.created.json'));
+        $this->assertInstanceOf('webignition\Model\Stripe\Event\Customer\Created', $event);
+    }
+
+
+    public function testCustomerUpdated() {
+        $event = Factory::create($this->getFixture('customer.updated.json'));
+        $this->assertInstanceOf('webignition\Model\Stripe\Event\Customer\Updated', $event);
+    }
     
 }
