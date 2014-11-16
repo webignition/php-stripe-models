@@ -21,6 +21,10 @@ class PlanTest extends ObjectTest {
     public function testGetInterval() {
         $this->assertEquals('month', $this->getPlan()->getInterval());
     }
+
+    public function testGetCurrency() {
+        $this->assertEquals('gbp', $this->getPlan()->getCurrency());
+    }
     
     public function testToArray() {
         $this->assertEquals(array(
