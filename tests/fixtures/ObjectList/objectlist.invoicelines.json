@@ -1,0 +1,36 @@
+{
+  "object": "list",
+  "count": 1,
+  "url": "/v1/invoices/in_3ceX5TY5UBN4Lr/lines",
+  "data": [
+    {
+      "id": "sub_3ceX8jHwVquCNo",
+      "object": "line_item",
+      "type": "subscription",
+      "livemode": false,
+      "amount": 0,
+      "currency": "gbp",
+      "proration": false,
+      "period": {
+        "start": 1394203572,
+        "end": 1396795572
+      },
+      "quantity": 1,
+      "plan": {
+        "interval": "month",
+        "name": "Personal",
+        "created": 1370600314,
+        "amount": 900,
+        "currency": "gbp",
+        "id": "personal-9",
+        "object": "plan",
+        "livemode": false,
+        "interval_count": 1,
+        "trial_period_days": 30,
+        "metadata": {}
+      },
+      "description": null,
+      "metadata": null
+    }
+  ]
+}

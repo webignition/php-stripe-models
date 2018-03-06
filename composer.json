@@ -12,18 +12,30 @@
         }
     ],
     "autoload": {
-        "psr-0": {
-            "webignition\\Tests": "tests/",
-            "": "src/"
+        "psr-4": {
+            "webignition\\Model\\Stripe\\": "src/"
         }
-    },   
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "webignition\\Tests\\Model\\Stripe\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit --colors=always",
+        "cs": "./vendor/bin/phpcs src tests --colors --standard=PSR2",
+        "ci": [
+            "@composer cs",
+            "@composer test"
+        ]
+    },
     "require": {
-        "php": ">=5.3.0",
+        "php": ">=5.6.0",
         "doctrine/collections":"*"
     },
     "require-dev": {
-        "symfony/class-loader": "*",
-        "phpunit/phpunit": "3.7.*"
-    },            
+        "phpunit/phpunit": "~5",
+        "squizlabs/php_codesniffer": "3.*"
+    },
     "minimum-stability":"stable"
 }

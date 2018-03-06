@@ -1,0 +1,30 @@
+{
+  "id": "sub_3ce7tY0vtbIAjb",
+  "plan": {
+    "interval": "month",
+    "name": "Agency",
+    "created": 1371118751,
+    "amount": 1900,
+    "currency": "gbp",
+    "id": "agency-19",
+    "object": "plan",
+    "livemode": false,
+    "interval_count": 1,
+    "trial_period_days": null,
+    "metadata": {}
+  },
+  "object": "subscription",
+  "start": 1394201972,
+  "status": "active",
+  "customer": "cus_3cbU7OeaCpcS9D",
+  "cancel_at_period_end": false,
+  "current_period_start": 1394201972,
+  "current_period_end": 1396880372,
+  "ended_at": null,
+  "trial_start": null,
+  "trial_end": null,
+  "canceled_at": null,
+  "quantity": 1,
+  "application_fee_percent": null,
+  "discount": null
+}
